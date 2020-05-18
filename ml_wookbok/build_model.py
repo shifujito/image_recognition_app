@@ -17,13 +17,13 @@ class Modelselection:
         model.add(layers.Conv2D(512, (3,3), activation='relu', padding = 'same'))
         model.add(layers.MaxPool2D((2,2)))
         model.add(layers.Flatten())
-        model.add(layers.Dense(7, activation = 'softmax'))
+        model.add(layers.Dense(9, activation = 'softmax'))
         for layer in base_vgg.layers[:-4]:
             layer.trainable = False
         model.compile(optimizer=optimizers.RMSprop(lr = 1e-5),
                       loss = 'categorical_crossentropy',
                       metrics = ['accuracy'])
-        model.fit(self.X_train, self.y_train, epochs = 12)
+        model.fit(self.X_train, self.y_train, epochs = 30)
         return model
 
     def vgg16_regress(self):

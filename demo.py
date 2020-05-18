@@ -1,4 +1,5 @@
 import sys
+import cv2
 import glob
 import numpy as np
 import ml_wookbok.preprocessing as pp
@@ -31,7 +32,7 @@ def main():
 
     if study == 0:
         # 学習
-        vgg16_class = Modelselection(X_train, y_train).vgg16_class()
+        vgg16_class = Modelselection(X_train, y_train_class).vgg16_class()
         # vgg16_regress = Modelselection(X_train, y_train_regres).vgg16_regress()
         vgg16_class_json= vgg16_class.to_json()
         open('vgg16_model.json', 'w').write(vgg16_class_json)
@@ -42,7 +43,7 @@ def main():
         trained_model.load_weights('./ml_wookbok/vgg16_model.hdf5')
 
     # 予測
-    test_data = './data/12_0052.png'
+    test_data = './data/24_0044.jpg'
     test_img = pp.load_image(test_data)
     X_test = np.array(test_img)
     if study == 0:
@@ -57,8 +58,22 @@ def main():
         pred_age = al.add_name(y_pred)
         print(pred_age)
     # ヒートマップ
-
-
+    img_output = trained_model.output[:,1]
+    last_conv_layer = trained_model.get_layer('conv2d_31')
+    grads = K.gradients(img_output, last_conv_layer.output)[0]
+    pooled_grads = K.mean(grads, axis=(0,1,2))
+    iterate = K.function([trained_model.input],[pooled_grads, last_conv_layer.output[0]])
+    pooled_grads_value, conv_layer_output_value = iterate([X_test])
+    for i in range(512):
+        conv_layer_output_value[: , : , i] *= pooled_grads_value[i]
+    hetamap = np.mean(conv_layer_output_value, axis=-1)
+    img3 = cv2.imread(test_data)
+    heatmap = cv2.resize(heatmap, (img3.shape[1], img3.shape[0]))
+    heatmap = np.uint8(255 * heatmap)
+    heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
+    saveimg = heatmap * 0.4 + img3
+    savename = './heat.jpg'
+    cv2.imwrite(savename, saveimg)
 
 
 

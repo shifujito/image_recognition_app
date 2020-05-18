@@ -19,16 +19,20 @@ def answer_label(age):
         label = 0 #18才未満
     elif age < 25:
         label = 1 #18才以上のaround20
+    elif age < 30:
+        label = 2
     elif age <35:
-        label = 2 # around30
+        label = 3 # around30
+    elif age < 40:
+        label = 4 # around40
     elif age < 45:
-        label = 3 # around40
+        label = 5 # around40
     elif age < 55:
-        label = 4 # around50
+        label = 6 # around50
     elif age < 65:
-        label = 5 # around60
+        label = 7 # around60
     else:
-        label = 6 #65以上
+        label = 8 #65以上
     return label
 
 def load_image(data):
