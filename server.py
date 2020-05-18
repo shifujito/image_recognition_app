@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, m
 import uuid
 import os
 
+from ml_wookbok.main import main
 from web_app.settings import DEBUG, HOST, PORT, BASE_DIR, PRODUCT_URL
 
 app = Flask(
@@ -40,13 +41,21 @@ def estimate():
 
         # 一意なファイル名 + 拡張子でOSに保存する
         filename = str(uuid.uuid4()) + '.' + file.filename.split('.')[-1]
-        file.save(os.path.join(BASE_DIR, 'web_app', 'static', 'image', filename))
+        path = os.path.join(BASE_DIR, 'web_app', 'static', 'image', filename)
+        file.save(path)
+
+        print(file)
+        print(path)
 
         # 保存したファイルから機械学習モデルにかける
         # ロジックは, 未実装なので仮としておく
+        age = main(path)
 
         # 仮の結果
-        session['estimated_age'] = 23
+        session['estimated_age'] = age
+
+        # 仮の結果
+        # session['estimated_age'] = 23
         session['result_image_path'] = '/static/image/' + filename
 
         return redirect(url_for('result'))
