@@ -16,7 +16,7 @@
 
 /* モジュール */
 
-.m-primary-button {
+.primary-button {
     margin: 2vh 0;
     padding: 2vh 2vw;
 
@@ -27,7 +27,7 @@
     color: var(--white-strong);
 }
 
-.m-file-form__input {
+.file-form__input {
     background: var(--white-weak);
     border: solid 2px var(--black-weak);
 
@@ -36,34 +36,45 @@
     height: 5vh;
 }
 
-.m-file-form__input > label > input {
+.file-form__input > label > input {
     display: none;
 }
 
-.m-file-form__input > label {
+.file-form__input > label {
     width: 100%;
     height: 100%;
+}
+
+.message {
+}
+
+.message_success {
+    color: var(--success-color);
+}
+
+.message_error {
+    color: var(--error-color);
 }
 
 /* Display */
 
 /*  Flex  */
-.m-flex {
+.flex {
     display: flex;
     cursor: pointer;
 }
 
-.m-flex-column {
+.flex-column {
     display: flex;
     flex-direction: column;
 }
 
-.m-flex_center {
+.flex_center {
     justify-content: center;
     align-items: center;
 }
 
-.m-flex-space-between {
+.flex-space-between {
     justify-content: space-between;
 }
 

@@ -26,6 +26,14 @@
 </div>
 
 <div class="content">
+    {% if success_message %}
+    <p class="message message_success">{{ success_message }}</p>
+    {% endif %}
+
+    {% if error_message %}
+    <p class="message message_error">{{ error_message }}</p>
+    {% endif %}
+
     {% block content %}
     {% endblock %}
 </div>

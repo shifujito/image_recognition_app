@@ -12,15 +12,15 @@
     <p>あなたの顔は何歳に見えるかな?</p>
 </div>
 
-<form action="/estimate/" method="POST" class="m-file-form">
-    <div class="m-file-form__input">
-        <label for="face_image_upload" class="m-flex m-flex_center">
+<form action="/estimate/" method="POST" class="file-form" enctype="multipart/form-data">
+    <div class="file-form__input">
+        <label for="face_image_upload" class="flex flex_center">
             ファイルを選択してください
             <input type="file" name="face_image" id="face_image_upload">
         </label>
     </div>
 
-    <button type="submit" class="m-primary-button">推定する!</button>
+    <button type="submit" class="primary-button">推定する!</button>
 </form>
 
 
