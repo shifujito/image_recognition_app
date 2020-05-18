@@ -13,7 +13,7 @@
 1. Xception
 1. Inception V3
 1. ResNet50
-1,VGG16
+1. VGG16
 1. VGG19
 1. MobileNet
 ## deta水増し
@@ -22,5 +22,7 @@
 ## 画像のスクレイピング
 2. https://www.talent-databank.co.jp/search/result?_t=20200518023853&_page=1&_view=list
 2. 上記のurlから6000件のデータを取得
+
 ## Flaskによるwebアプリ化
-1. まだ不明
+
+詳細は, [web_app/README](/web_app/README.md) に.

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block external_header %}
+{% endblock %}
+
+{% block title %}年齢診断App{% endblock %}
+
+{% block content %}
+<h1>診断結果</h1>
+
+<div class="flex flex_center">
+    <!--  中央寄せのためのラッパー  -->
+    <div class="result flex flex_center">
+        <span class="result__prev">あなたの推定年齢は...</span>
+        <span class="result__content">{{ estimated_age }} 歳！！</span>
+    </div>
+</div>
+
+<div class="result-image flex flex_center">
+    <!--    <img src="/static/image/仮画像.png" alt="結果画像"/>-->
+    <img src="{{ result_image_path }}" alt="結果画像"/>
+</div>
+
+<div class="flex-column flex_center description">
+    <h2>画像の見方</h2>
+    <ul>
+        <li>説明文</li>
+        <li>色がついているところが学習に使ったところだってばよ</li>
+    </ul>
+</div>
+
+<div class="flex flex-space-between nav">
+    <!--  ⇓ 未実装 Link  -->
+<!--    <a class="remove-a-decoration primary-button" href="/not_implemented">結果をシェアする</a>-->
+    <a class="remove-a-decoration primary-button" href="https://twitter.com/share?url={{product_url}}&text=年齢推定！あなたの推定年齢は...{{ estimated_age }}歳！">結果をシェアする</a>
+    <a class="remove-a-decoration primary-button" href="/">もう一度診断する</a>
+</div>
+{% endblock %}
+
+{% block external_footer %}
+{% endblock %}

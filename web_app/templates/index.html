@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block external_header %}
+{% endblock %}
+
+{% block title %}年齢診断App{% endblock %}
+
+{% block content %}
+<div>
+    <!--  サイト説明  -->
+    <p>このサイトでは, 自撮り画像から年齢を推定できるよ</p>
+    <p>あなたの顔は何歳に見えるかな?</p>
+</div>
+
+<form action="/estimate/" method="POST" class="file-form" enctype="multipart/form-data">
+    <div class="file-form__input">
+        <label for="face_image_upload" class="flex flex_center">
+            ファイルを選択してください
+            <input type="file" name="face_image" id="face_image_upload">
+        </label>
+    </div>
+
+    <button type="submit" class="primary-button">推定する!</button>
+</form>
+
+
+{% endblock %}
+
+{% block external_footer %}
+{% endblock %}
