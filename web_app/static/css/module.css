@@ -1,0 +1,14 @@
+/* 打ち消しスタイル */
+.remove-a-decoration {
+    text-decoration: none;
+    color: inherit;
+}
+
+.remove-a-decoration:visited {
+    color: inherit;
+}
+
+.remove-button-style {
+    background-color: transparent;
+    border: solid 0 var(--white-strong);
+}

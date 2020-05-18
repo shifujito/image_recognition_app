@@ -1,0 +1,72 @@
+:root {
+    /* ヘッダー  */
+    --header-color: #A0D0FF;
+    --header-height: 10vh;
+
+    /* フッター */
+    --footer-color: #F8F8F8;
+    --footer-height: 10vh;
+
+    /* コンテンツ */
+    --content-min-height: 80vh;  /* 100 - 20(header + footer)  = 80 [vh] */
+
+    /* Font */
+    --main-font: "M PLUS 1p";
+    --weight-min: 100;
+    --weight-middle: 400;
+    --weight-bold: 700;
+    --weight-max: 900;
+
+    /* Basic Option */
+    --white-strong: #fafafa;
+    --white-weak: #dddddd;
+    --black-strong: #202020;
+    --black-weak: #303030;
+}
+
+body {
+    font-family: var(--main-font), Avenir, Helvetica, Arial, sans-serif;
+    color: var(--black-weak);
+    font-weight: var(--weight-middle);
+
+    display: grid;
+    grid-template:
+            "header" var(--header-height)
+            "content" 1fr
+            "footer" var(--footer-height);
+}
+
+#header {
+    grid-area: header;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--header-color);
+
+    /* Font */
+    font-weight: var(--black-strong);
+    font-size: 5vh;
+}
+
+.content {
+    grid-area: content;
+
+    min-height: var(--content-min-height);
+}
+
+#footer {
+    grid-area: footer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--footer-color);
+}
+
+#footer > p {
+    margin: 0.5vh;
+}

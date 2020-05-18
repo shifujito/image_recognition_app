@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--  Web Font -->
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,400,700,900&display=swap&subset=japanese"
+          rel="stylesheet">
+
+    <!--  CSS Files based on SMACSS  -->
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/module.css">
+    <link rel="stylesheet" href="/static/css/layout.css">
+
+    {% block external_header %}
+    {% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div id="header">
+    <a href="/" class="remove-a-decoration">年齢診断！</a>
+</div>
+
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer id="footer">
+    <p>Copyright © 2020 Shion Fujuto.</p>
+    <p>All Rights Reserved.</p>
+</footer>
+
+
+{% block external_footer %}
+{% endblock %}
+</body>
+</html>
