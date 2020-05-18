@@ -67,6 +67,8 @@ def main():
     for i in range(512):
         conv_layer_output_value[: , : , i] *= pooled_grads_value[i]
     hetamap = np.mean(conv_layer_output_value, axis=-1)
+    heatmap = np.maximum(heatmap, 0)
+    heatmap /= np.max(heatmap)
     img3 = cv2.imread(test_data)
     heatmap = cv2.resize(heatmap, (img3.shape[1], img3.shape[0]))
     heatmap = np.uint8(255 * heatmap)
