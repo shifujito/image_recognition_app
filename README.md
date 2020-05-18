@@ -1,4 +1,8 @@
 # image_recognition_app
+# 環境構築
+- conda create --name image-app python=3.6
+- conda activate image-app
+- conda install --file requirement.txt
 ## このアプリの作成理由
 1. 居酒屋などの年齢確認とかにあったら便利だと思ったから
 1. 老けている理由をヒートマップにより判断できると思ったから
