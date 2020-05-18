@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 def data_to_label(data):
-    age = int(data[7:9])
+    age = int(data[8:10])
     label = answer_label(age)
     return label
 
@@ -23,10 +23,10 @@ def answer_label(age):
         label = 6 #65以上
     return label
 
-def load_image(data, im_size):
+def load_image(data):
     img = Image.open(data)
     img = img.convert('RGB')
-    img = img.resize(im_size)
+    img = img.resize((224,224))
     img = np.asarray(img)
     img = img/255.0
     return img
@@ -35,3 +35,6 @@ def list_to_array(list1, list2):
     array1 = np.array(list1)
     array2 = np.array(list2)
     return array1, array2
+
+def add_class_name(pred):
+    pred_age = np.argmax(pred, axis = 1)

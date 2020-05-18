@@ -1,5 +1,3 @@
-
-
 def original_model(in_shpae):
     model = models.Sequential()
     model.add(layers.Conv2D(
@@ -23,7 +21,6 @@ def original_model(in_shpae):
     model.compile(optimizer='adam',
                   loss = 'categorical_crossentropy',
                   metrics = ['accuracy'])
-
     return model
 
 def xception_model(in_shpae):
