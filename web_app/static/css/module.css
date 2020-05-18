@@ -1,14 +1,110 @@
 /* 打ち消しスタイル */
+
 .remove-a-decoration {
     text-decoration: none;
     color: inherit;
 }
 
 .remove-a-decoration:visited {
-    color: inherit;
+    /*color: inherit;*/
 }
 
 .remove-button-style {
     background-color: transparent;
     border: solid 0 var(--white-strong);
 }
+
+/* モジュール */
+
+.m-primary-button {
+    margin: 2vh 0;
+    padding: 2vh 2vw;
+
+    border-radius: 5px;
+    /* border: solid 1px var(--white-weak); */
+
+    background: #4183FF;
+    color: var(--white-strong);
+}
+
+.m-file-form__input {
+    background: var(--white-weak);
+    border: solid 2px var(--black-weak);
+
+    padding: 2vh;
+    width: 30vw;
+    height: 5vh;
+}
+
+.m-file-form__input > label > input {
+    display: none;
+}
+
+.m-file-form__input > label {
+    width: 100%;
+    height: 100%;
+}
+
+/* Display */
+
+/*  Flex  */
+.m-flex {
+    display: flex;
+    cursor: pointer;
+}
+
+.m-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.m-flex_center {
+    justify-content: center;
+    align-items: center;
+}
+
+.m-flex-space-between {
+    justify-content: space-between;
+}
+
+/* 結果 */
+
+.result {
+    width: 80vw;
+    height: 15vh;
+
+    border-radius: 52px;
+    background: linear-gradient(145deg, #e1e1e1, #ffffff);
+    box-shadow: 18px 18px 40px #9b9b9b,
+    -18px -18px 40px #ffffff;
+
+    margin: 3vh 0 6vh 0;
+}
+
+.result__prev {
+    margin-right: 3vw;
+}
+
+.result__content {
+    font-weight: var(--weight-bold);
+    font-size: 6vw;
+}
+
+.result-image {
+    /*border: solid 2px var(--black-weak);*/
+    border-radius: 5px;
+}
+
+.result-image > img {
+    height: 35vh;
+    width: auto;
+}
+
+.description {
+    border: solid 1px var(--black-weak);
+}
+
+.nav {
+    margin: 5vh 15vw;
+}
+
