@@ -1,10 +1,18 @@
 from PIL import Image
 import numpy as np
 
-def data_to_label(data):
-    age = int(data[8:10])
-    label = answer_label(age)
-    return label
+class Label:
+    def __init__(self, data):
+        self.data = data
+
+    def data_to_classifier(self):
+        age = int(self.data[7:9])
+        label = answer_label(age)
+        return label
+
+    def data_to_regression(self):
+        age = float(self.data[7:9])
+        return age
 
 def answer_label(age):
     if age < 18:
