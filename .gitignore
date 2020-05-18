@@ -1,5 +1,6 @@
 # Kaito Local Env
-*.DS_Store
+.DS_Store
+.idea
 
 # ⇓ Python Template Ignore ⇓
 # Byte-compiled / optimized / DLL files
