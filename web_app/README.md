@@ -3,6 +3,7 @@
 ## Links
 
 - [XD プロトタイプ](https://xd.adobe.com/view/00f5a7b2-4a01-4867-60f3-c4a10b1cb50a-76c4/)
+- [タスク管理](https://github.com/FUJITOSHION/image_recognition_app/projects/1)
 
 ## ルーティング
 
