@@ -12,7 +12,14 @@ app = Flask(
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    context = {}
+    return render_template('index.html', context=context)
+
+
+@app.route('/result/')
+def result():
+    context = {}
+    return render_template('result.html', context=context)
 
 
 if __name__ == '__main__':
