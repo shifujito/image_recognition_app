@@ -12,9 +12,9 @@ def main(test_path):
     model.load_weights('./ml_wookbok/vgg16_model.hdf5')
     pred = np.argmax(model.predict(np.array([img])), axis=1)
     pred_age = al.add_name(pred)
-    out_path = ht.make_hetamap(model, test_path)
+    out_path = ht.make_hetamap(model, np.array([img]),test_path)
     K.clear_session()
-    return pred_age  # ,out_path 予想の年代と出力のpath
+    return pred_age, out_path 
 
 
 if __name__ == '__main__':
