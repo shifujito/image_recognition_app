@@ -12,4 +12,4 @@ XPATHS = {
     "next_button": "/html/body/div[1]/div/div[3]/div[2]/div[2]/div/div[1]/span/a[5]"
 }
 
-TIME_SPAN = 10  # アクセス秒間隔, 対象サイト負荷軽減のため一定より大きくすること
+TIME_SPAN = 1  # アクセス秒間隔, 対象サイト負荷軽減のため一定より大きくすること
