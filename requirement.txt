@@ -3,6 +3,7 @@ appnope==0.1.0
 astunparse==1.6.3
 attrs==19.3.0
 backcall==0.1.0
+beautifulsoup4==4.9.1
 bleach==3.1.4
 cachetools==4.1.0
 certifi==2020.4.5.1
@@ -77,6 +78,7 @@ selenium==3.141.0
 Send2Trash==1.5.0
 six==1.14.0
 sklearn==0.0
+soupsieve==2.0.1
 tensorboard==2.2.1
 tensorboard-plugin-wit==1.6.0.post3
 tensorflow==2.2.0
@@ -86,6 +88,7 @@ terminado==0.8.3
 testpath==0.4.4
 threadpoolctl==2.0.0
 tornado==6.0.4
+tqdm==4.46.0
 traitlets==4.3.3
 urllib3==1.25.9
 wcwidth==0.1.9
