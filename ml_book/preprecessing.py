@@ -10,7 +10,7 @@ class TrainProcess:
 
     def process(self):
         X_train, y_train = [], []
-        for data in tqdm(self.train_data[:7900]):
+        for data in tqdm(self.train_data):
             train_img = load_image(data)
             X_train.append(train_img)
             train_y = data_to_label(data)
