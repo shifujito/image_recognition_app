@@ -20,4 +20,5 @@ if __name__ == '__main__':
 
     config = parser.parse_args()
     print(config)
-    train = Train.run()
+
+    Train.run()
