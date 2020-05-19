@@ -23,7 +23,7 @@ class Modelselection:
         model.compile(optimizer=optimizers.RMSprop(lr = 1e-5),
                       loss = 'categorical_crossentropy',
                       metrics = ['accuracy'])
-        model.fit(self.X_train, self.y_train, epochs = 30)
+        model.fit(self.X_train, self.y_train, epochs = 12)
         return model
 
     def vgg16_regress(self):

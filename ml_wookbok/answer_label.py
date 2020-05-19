@@ -12,9 +12,9 @@ def add_name(pred):
     elif pred == 5:
         label =  '41歳 ~ 45歳'
     elif pred == 6:
-        label =  '46歳 ~ 55歳'
+        label =  '46歳 ~ 52歳'
     elif pred == 7:
-        label =  '56歳 ~ 65歳'
+        label =  '53歳 ~ 65歳'
     elif pred == 8:
         label =  '65歳以上'
     return label

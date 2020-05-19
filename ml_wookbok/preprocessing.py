@@ -27,7 +27,7 @@ def answer_label(age):
         label = 4 # around40
     elif age < 45:
         label = 5 # around40
-    elif age < 55:
+    elif age < 53:
         label = 6 # around50
     elif age < 65:
         label = 7 # around60
