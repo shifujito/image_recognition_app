@@ -72,7 +72,21 @@ class Main:
         self.handler.wait(_id="search-results")
         self.wait()
 
-    def read_table(self, recursive=False) -> None:
+    def read_table_recursive(self):
+        try:
+            self.read_table()
+        except Exception as e:
+            # なんらかのエラーが吐かれた時, スキップして継続する
+            print("ERROR: ", e)
+            print("スキップして, ダウンロードを継続します.")
+        finally:
+            self.wait()
+
+            # 次のページへ行き, 再び同様の処理
+            self.move_to_next()
+            self.read_table_recursive()
+
+    def read_table(self) -> None:
         self.handler.set_soup()
 
         for line in self.handler.soup.find("table", {"id": "search-results"}).findAll("tr"):
@@ -93,15 +107,9 @@ class Main:
 
                 print(result)  # Log
 
-        if recursive:
-            self.wait()
-
-            # 次のページへ行き, 再び同様の処理
-            self.move_to_next()
-            self.read_table(recursive=True)
-
     def run(self) -> None:
-        self.read_table(recursive=True)
+        self.read_table_recursive()
+        # 終了時の挙動が怪しいので, 終わったっぽかったらCtrl-Cで強制終了してけろ
         self.handler.fin()
 
 
