@@ -11,4 +11,8 @@
         height: 3.5vh;
         width: 60vw;
     }
+
+    .nav {
+        margin: 5vh 8vw;
+    }
 }

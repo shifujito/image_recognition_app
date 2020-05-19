@@ -102,8 +102,7 @@
 }
 
 .result-image {
-    /*border: solid 2px var(--black-weak);*/
-    border-radius: 5px;
+    margin: 5vh 0;
 }
 
 .result-image > img {
@@ -113,6 +112,8 @@
 
 .description {
     border: solid 1px var(--black-weak);
+
+    /* margin: 5vh 2vw; */
 }
 
 .nav {
