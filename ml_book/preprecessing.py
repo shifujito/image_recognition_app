@@ -2,6 +2,8 @@ import numpy as np
 from tqdm import tqdm
 from PIL import Image
 from keras.utils.np_utils import to_categorical
+
+
 class TrainProcess:
     def __init__(self,train_data):
         self.train_data = train_data
@@ -20,7 +22,15 @@ class TrainProcess:
 
 
 class TestProcess:
-    pass
+    def __init__(self, test_data):
+        self.test_data = test_data
+
+    def process(self):
+        X_test = []
+        test_img = load_image(self.test_data)
+        X_test.append(test_img)
+        X_test = list_to_array(X_test)
+        return X_test
 
 def data_to_label(data):
     age = int(data[7:9])
@@ -68,3 +78,30 @@ def age_to_label(age):
     else:
         label = 11
     return label
+
+def age_name(y_pred):
+    if y_pred == 0:
+        age = '18歳未満です'
+    elif y_pred == 1:
+        age = '18歳~21歳です'
+    elif y_pred == 2:
+        age = '22歳~25歳です'
+    elif y_pred == 3:
+        age = '26歳~29歳です'
+    elif y_pred == 4:
+        age = '30歳~34歳です'
+    elif y_pred == 5:
+        age = '35歳~39歳です'
+    elif y_pred == 6:
+        age = '40歳~44歳です'
+    elif y_pred == 7:
+        age = '45歳~49歳です'
+    elif y_pred == 8:
+        age = '50歳~54歳です'
+    elif y_pred == 9:
+        age = '55歳~59歳です'
+    elif y_pred == 10:
+        age = '60歳~64歳です'
+    elif y_pred == 11:
+        age = '65歳以上です'
+    return age
