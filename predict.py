@@ -17,14 +17,14 @@ class Predict:
                             config.data,
                             int(np.argmax(y_pred_class)),
                             'conv2d_1')
-        heatmap.grad_cam()
+        heatmap.grad_cam(config.out)
         print('---------------------あなたの推定年齢は-------------------------')
         print('')
         print(y_pred)
         print('')
-        print('----------------------heat.jpgを出力しました---------------------')
+        print('----------------------{}を出力しました---------------------'.format(config.out))
 
-        
+
     def age_class(self, y_pred_class):
         y_pred = np.argmax(y_pred_class)
         y_pred = pp.age_name(y_pred)
@@ -33,7 +33,7 @@ class Predict:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description = '年齢推定')
     parser.add_argument('-d','--data',type = str, default = './Photo/3.jpg', help = 'input_data_path')
-    parser.add_argument('-o', '--out', type = str, default = 'out/heat.jpg', help = 'out_put')
+    parser.add_argument('-o', '--out', type = str, default = './heat.jpg', help = 'out_put')
 
     config = parser.parse_args()
     print(config)
