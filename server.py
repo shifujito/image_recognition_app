@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, m
 import uuid
 import os
 
-from ml_wookbok.main import main
+from main import main
 from web_app.settings import DEBUG, HOST, PORT, BASE_DIR, PRODUCT_URL
 
 app = Flask(
