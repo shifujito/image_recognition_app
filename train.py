@@ -2,7 +2,6 @@ import glob
 import argparse
 import ml_book.preprecessing as pp
 import ml_book.build_model as bm
-import ml_book.heatmap as ht
 
 class Train:
     def run():
